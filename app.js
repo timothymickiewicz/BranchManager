@@ -8,7 +8,6 @@ const OUTPUT_DIR = path.resolve(__dirname, "output")
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 const render = require("./lib/htmlRenderer");
 var employeeArray = [];
-
 // Function to start questions again or create html
 function startOrRender() {
     inquirer.prompt({

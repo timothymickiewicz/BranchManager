@@ -1,0 +1,76 @@
+/* creating animations */
+@keyframes card {
+    from {background-color: darkgrey;}
+    to {background-color: #D6ED17FF;}
+    from {border-color: #D6ED17FF;}
+    to {border-color: darkgrey;}
+    from {width: 30%;}
+    to {width: 31%;}
+}
+
+/* mobile responsive keyframe */
+@keyframes cardPhone {
+    from {background-color: darkgrey;}
+    to {background-color: #D6ED17FF;}
+    from {border-colors: #D6ED17FF;}
+    to {border-color: darkgrey;}
+    from {width: 80%;}
+    to {width: 85%;}
+}
+/* card animation on hover */
+.card:hover {
+    animation-name: card;
+    animation-duration: 1.5s;
+    -webkit-animation-fill-mode: forwards; 
+    animation-fill-mode: forwards;
+}
+
+body {
+    background-color: grey;
+    font-family: 'Anton', sans-serif;
+}
+.jumbotron {
+    background-color: #D6ED17FF;
+    border-bottom: solid rgb(58, 57, 57) 0.5rem;
+    border-radius: 0;
+}
+.text-center {
+    width: 100%;
+    text-align: center;
+    font-size: 5rem;
+}
+.col-12 {
+    display: flex;
+    flex-flow: row wrap;
+}
+.card {
+    margin: 1vw;
+    min-width: auto;
+    width: 30%;
+    background-color: darkgrey;
+    border: solid #D6ED17FF 0.5rem;
+}
+.card-header {
+    height: 35%;
+    text-align: center;
+    padding: .75vw;
+}
+.card-body {
+    font-family: 'Bree Serif', serif;
+}
+
+/* Mobile responsive */
+@media only screen and (max-width: 812px) {
+    .card {
+        width: 80%;
+    }
+    .card:hover {
+        animation-name: cardPhone;
+        animation-duration: 1.5s;
+        -webkit-animation-fill-mode: forwards; 
+        animation-fill-mode: forwards;
+    }
+    .text-center {
+        font-size: 4rem;
+    }
+}
