@@ -8,7 +8,7 @@
     to {width: 31%;}
 }
 
-/* mobile responsive keyframe */
+/* mobile responsive animation */
 @keyframes cardPhone {
     from {background-color: darkgrey;}
     to {background-color: #D6ED17FF;}
@@ -17,6 +17,7 @@
     from {width: 80%;}
     to {width: 85%;}
 }
+
 /* card animation on hover */
 .card:hover {
     animation-name: card;
@@ -58,7 +59,15 @@ body {
 .card-body {
     font-family: 'Bree Serif', serif;
 }
-
+.wrapBtn {
+    width: 100%;
+    text-align: right;
+}
+.remove {
+    padding: 0.3rem;
+    border-radius: 0.25rem;
+    margin-top: 0.5rem;
+}
 /* Mobile responsive */
 @media only screen and (max-width: 812px) {
     .card {
