@@ -7,7 +7,30 @@ const fs = require("fs");
 const OUTPUT_DIR = path.resolve(__dirname, "output")
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 const render = require("./lib/htmlRenderer");
-inquirer
+var employeeArray = [];
+
+// Function to start questions again or create html
+function startOrRender() {
+    inquirer.prompt({
+        type: "confirm",
+        name: "new",
+        message: "Would you like to add another employee?",
+    })
+    .then((newResponse) => {
+        if (newResponse.new === false) {
+            fs.writeFile(outputPath, render(employeeArray), (err) => {
+                if (err) throw err;
+            });
+        }
+        else if (newResponse.new === true) {
+            createEmployee();
+        }
+    })
+};
+
+// Questions to gather data from user for employee cards
+function createEmployee() {
+    inquirer
     .prompt([
         {
             message: "What is your name?",
@@ -33,15 +56,15 @@ inquirer
         }, 
     ])
     .then((response) => {
-        console.log(response);
         if (response.role[0] === "Manager") {
             inquirer.prompt({
                 name: "officeNumber",
                 message: "What is your office number?",
             })
             .then((managerResponse) => {
-                console.log(managerResponse);
-                return managerResponse;
+                let newManager = new Manager(response.name, response.id, response.email, managerResponse.officeNumber);
+                employeeArray.push(newManager);
+                startOrRender();
             })
         }
         else if (response.role[0] === "Engineer") {
@@ -50,8 +73,9 @@ inquirer
                 message: "What is your Github username?",
             })
             .then((engineerResponse) => {
-                console.log(engineerResponse);
-                return engineerResponse;
+                let newEngineer = new Engineer(response.name, response.id, response.email, engineerResponse.github);
+                employeeArray.push(newEngineer);
+                startOrRender();
             })
         }
         else if (response.role[0] === "Intern") {
@@ -60,11 +84,14 @@ inquirer
                 message: "What is the name of your school?",
             })
             .then((internResponse) => {
-                console.log(internResponse);
-                return internResponse;
+                let newIntern = new Intern(response.name, response.id, response.email, internResponse.school);
+                employeeArray.push(newIntern);
+                startOrRender();
             })
         }
     })
+};
+createEmployee();
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 // After the user has input all employees desired, call the `render` function (required
