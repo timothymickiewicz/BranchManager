@@ -2,7 +2,7 @@
 
 ## Demonstration
 ![Gif](assets/media/BranchManager.gif)
-![Picture](assets/media/)
+![Picture](assets/media/BranchManager.png)
 
  
 ## Table of Contents
