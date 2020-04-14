@@ -1,4 +1,4 @@
-/* creating animations */
+/* creating card animations */
 @keyframes card {
     from {background-color: darkgrey;}
     to {background-color: #D6ED17FF;}
@@ -18,7 +18,7 @@
     to {width: 85%;}
 }
 
-/* card animation on hover */
+/* card animation performed on hover */
 .card:hover {
     animation-name: card;
     animation-duration: 1.5s;
@@ -30,20 +30,24 @@ body {
     background-color: grey;
     font-family: 'Anton', sans-serif;
 }
+
 .jumbotron {
     background-color: #D6ED17FF;
     border-bottom: solid rgb(58, 57, 57) 0.5rem;
     border-radius: 0;
 }
+
 .text-center {
     width: 100%;
     text-align: center;
     font-size: 5rem;
 }
+
 .col-12 {
     display: flex;
     flex-flow: row wrap;
 }
+
 .card {
     margin: 1vw;
     min-width: auto;
@@ -51,23 +55,28 @@ body {
     background-color: darkgrey;
     border: solid #D6ED17FF 0.5rem;
 }
+
 .card-header {
     height: 35%;
     text-align: center;
     padding: .75vw;
 }
+
 .card-body {
     font-family: 'Bree Serif', serif;
 }
+
 .wrapBtn {
     width: 100%;
     text-align: right;
 }
+
 .remove {
     padding: 0.3rem;
     border-radius: 0.25rem;
     margin-top: 0.5rem;
 }
+
 /* Mobile responsive */
 @media only screen and (max-width: 812px) {
     .card {
