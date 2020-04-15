@@ -47,10 +47,12 @@ function failedQuery() {
                 message: "Would you like to render your document with the employees that were previously completed?",
             })
             .then((renderResponse) => {
-                if (renderResponse.render === true)
+                if (renderResponse.render === true) {
+                    employeeArray.sort();
                     fs.writeFile(outputPath, render(employeeArray), (err) => {
                     if (err) throw err;
-                });
+                    });
+                }
             })
         }
     })
