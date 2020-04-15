@@ -18,6 +18,7 @@ function startOrRender() {
     })
     .then((newResponse) => {
         if (newResponse.new === false) {
+            employeeArray.sort();
             fs.writeFile(outputPath, render(employeeArray), (err) => {
                 if (err) throw err;
             });
