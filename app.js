@@ -74,7 +74,7 @@ function createEmployee() {
         },
         {
             type: "checkbox",
-            message: "What is your role?",
+            message: "What is your employee's role in the company?",
             name: "role",
             choices: [
             "Manager", 
